@@ -11,9 +11,16 @@
 
 (function() {
 
-    document.getElementById("run").addEventListener("click", function() {
+    document.getElementById("run").addEventListener("click", () => {
 
-        // your code here
+        for (let i = 0; i < 22; i++){
+            if (Number.isInteger(Math.sqrt(i))){
+                const resNode = document.getElementById("result")
+                let li = document.createElement("li");
+                li.appendChild(document.createTextNode(i));
+                resNode.appendChild(li);
+            }
+        }
 
     });
 
