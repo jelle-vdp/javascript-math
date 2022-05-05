@@ -10,15 +10,44 @@
 // You will have time to focus on it later.
 
 (function() {
-    // to get the value of an input: document.getElementById("element-id").value
 
-    var performOperation = function(operation) {
-        // perform the operation
+    const performOperation = operation => {
+        
+        const resultNode = document.getElementById("result");
+        const resultWrapperNode = document.getElementById("result-wrapper");
+        
+        let num1 = +document.getElementById("op-one").value;
+        let num2 = +document.getElementById("op-two").value;
+
+        const setResult = (res) => {
+            resultNode.innerText = res;
+            resultWrapperNode.style.display = "block";
+            setTimeout(() => {
+                resultWrapperNode.style.display = "none";
+                document.getElementById("op-one").value = '';
+                document.getElementById("op-two").value = '';
+            }, 5000);
+        };
+
+        switch(operation) {
+            case "addition":
+                setResult(num1 + num2);
+                break;
+            case "substraction":
+                setResult(num1 - num2);
+                break;
+            case "multiplication":
+                setResult(num1 * num2);
+                break;
+            case "division":
+                setResult(num1 / num2);
+                break;
+        };
     };
 
-    Array.from(document.querySelectorAll("button.operator")).forEach(function($btn) {
-        $btn.addEventListener("click", function() {
-            performOperation($btn.id);
+    Array.from(document.querySelectorAll("button.operator")).forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            performOperation(btn.id);
         });
     });
 })();
