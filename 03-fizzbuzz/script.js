@@ -10,7 +10,46 @@
 // You will have time to focus on it later.
 
 (function() {
+    
+    const btn = document.getElementById('btn');
+    const resultNode = document.getElementById("result");
+    const resultWrapperNode = document.getElementById("result-wrapper");
 
-    // your code here
+    const showAlert = () => {
+        window.alert("You have to enter a number between 1 and 100");
+        document.getElementById('fizzbuzz-num').value = "";
+    };
+
+    const setResult = (res) => {
+        resultNode.innerText = resultNode.innerText + res;
+        resultWrapperNode.style.display = "block";
+        setTimeout(() => {
+            document.getElementById('fizzbuzz-num').value = "";
+            resultNode.innerText = "";
+            resultWrapperNode.style.display = "none";
+        }, 5000);
+    };
+
+    btn.addEventListener("click", () => {
+        
+        let num = +document.getElementById('fizzbuzz-num').value;
+        
+
+        if (num < 1 || num > 101 ){
+            showAlert();
+        } else {
+            if (num % 3 === 0){
+                setResult("fizz");
+            }
+    
+            if (num % 5 === 0){
+                setResult("buzz");
+            }
+
+            if (!(num % 3 === 0) && !(num % 5 === 0)){
+                setResult(num);
+            }
+        }
+    })
 
 })();

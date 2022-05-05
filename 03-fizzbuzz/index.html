@@ -18,9 +18,23 @@
             </header>
             <div class="content">
                 <section class="explain">
-                    <p>In the console, for each numbers between 1 and 100 : show "fizz" if the number is a multiple of 3,
+                    <p>For each numbers between 1 and 100 : show "fizz" if the number is a multiple of 3,
                         "buzz" if it's a multiple of 5, "fizzbuzz" if it's both, or simply the number if it's none of these.
                     </p>
+                </section>
+                <section class="material">
+                    <form action="#" method="post">
+                        <div class="field">
+                            <label for="fizzbuzz-num">Add a number:</label>
+                            <input type="number" name="fizzbuzz-num" id="fizzbuzz-num" min="1" max="100" />
+                        </div>
+                        <div class="actions">
+                            <button type="button" class="operator" id="btn">FizzBuzz?</button>
+                        </div>
+                    </form>
+                </section>
+                <section id="result-wrapper" style="display:none; text-align:center">
+                    <p id="result" style="font-size:3rem;"></p>
                 </section>
             </div>
         </div>
