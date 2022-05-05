@@ -21,7 +21,6 @@
                 resNode.appendChild(li);
             }
         }
-
     });
-
+    
 })();
