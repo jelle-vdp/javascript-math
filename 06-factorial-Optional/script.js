@@ -11,11 +11,18 @@
 
 (function() {
     
-    // to get the value of an input: document.getElementById("element-id").value
 
-    document.getElementById("run").addEventListener("click", function() {
+    document.getElementById("run").addEventListener("click", () => {
 
-        // your code here
+        const num = +document.getElementById("number").value;
+
+        let output = 1;
+
+        for(i = 1; i < (num + 1); i++){
+            output = output * i;
+        };
+
+        document.getElementById('result').innerText = output;
 
     });
 
